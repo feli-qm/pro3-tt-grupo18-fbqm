@@ -10,7 +10,7 @@ function App() {
     <>
       <header>
         <img class="logo" src="hollywoodShines.png" alt=""></img>
-        <p>Hollywood Shines</p>
+        <h1>Hollywood Shines</h1>
         <Navbar />
       <Switch>
         <Route path="/" exact component={Home}/>
@@ -19,9 +19,6 @@ function App() {
         <Route path="/encartel" exact component={EnCartel}/>
       </Switch>
       </header>
-      <body>
-        <p>Funciona react y es mi primer committtt</p>
-      </body>
       <footer>
         <p>Felicitas y Trinidad</p>
       </footer>
