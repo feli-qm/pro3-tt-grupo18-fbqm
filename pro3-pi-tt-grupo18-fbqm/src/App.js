@@ -1,9 +1,12 @@
 function App() {
   return (
     <>
-    <header>Hollywood Shines</header>
-    <p>React</p>
-    <footer>Felicitas y Trinidad</footer>
+      <header>
+        <p>Hollywood Shines</p>
+      </header>
+      <footer>
+        <p>Felicitas y Trinidad</p>
+      </footer>
     </>
   );
 }
