@@ -19,6 +19,9 @@ function App() {
         <Route path="/encartel" exact component={EnCartel}/>
       </Switch>
       </header>
+      <body>
+        <p>Funciona react</p>
+      </body>
       <footer>
         <p>Felicitas y Trinidad</p>
       </footer>
