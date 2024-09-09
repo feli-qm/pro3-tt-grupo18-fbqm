@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <header>
+        <img class="logo" src="hollywoodShines.png" alt=""></img>
         <p>Hollywood Shines</p>
         <Navbar />
       <Switch>
