@@ -20,7 +20,7 @@ function App() {
       </Switch>
       </header>
       <body>
-        <p>Funciona react</p>
+        <p>Funciona react y es mi primer committtt</p>
       </body>
       <footer>
         <p>Felicitas y Trinidad</p>
