@@ -1,7 +1,7 @@
 const MasPopulares = () => {
     return (
       <div>
-        <h1>Mas populares</h1>
+        <h2>Mas populares</h2>
       </div>
     )
   }
