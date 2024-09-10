@@ -12,6 +12,7 @@ class Populares extends Component {
             populares: []
         }
     }
+    
     componentDidMount(){
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=56c25df0bc04ec0dd18325a8ea74e10c&language=en-US&page=1', options)
         .then(response => response.json())
@@ -20,6 +21,7 @@ class Populares extends Component {
         }))
         .catch(err => console.error(err))
     }
+
     render(){
         return(
             <section className="movieCard-grid">

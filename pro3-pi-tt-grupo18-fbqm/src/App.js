@@ -4,13 +4,14 @@ import Home from "./pages/Home";
 import Favoritos from "./pages/Favoritos";
 import MasPopulares from "./pages/MasPopulares";
 import EnCartel from "./pages/EnCartel";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <>
       <header>
         <div className="header-content">
-          <img class="logo" src="hollywoodShines.png" alt="Logo"/>
+          <Link to={`/`}><img class="logo" src="hollywoodShines.png" alt="Logo"/></Link>
           <h1>HOLLYWOOD SHINES</h1>
         </div>
         <nav>

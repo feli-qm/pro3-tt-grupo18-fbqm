@@ -11,7 +11,7 @@ class PopularCard extends Component {
         }
     }
 
-    vistaDescripcion(){
+    handleShowExtra(){
         this.setState({
             showExtra: !this.state.showExtra
         })
@@ -25,11 +25,12 @@ class PopularCard extends Component {
             <article className="movie-card">
                 <div className='movieCard-content'>
                     <img src={imgUrl} alt=""/>
-                    <Link to={`/maspopulares`}></Link>
                     <h2>{title}</h2>
-                    <p>{overview}</p>
-                    <p className={this.state.showExtra ? "show":"hide"}>Ver mas</p>
-                    <button onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ver menos": "Ver mas"}</button>
+                    <p className={this.state.showExtra ? "show":"hide"}>{overview}</p>
+                    <button onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripcion": "Ver descripcion"}</button>
+                    <Link to="/detalle"><button>Ir a detalle</button></Link>
+                    <button>Agregar/quitar de favoritos</button>
+
                 </div>
             </article>
         )
