@@ -4,9 +4,11 @@ import Populares from "../components/Populares/Populares";
 const Home = () => {
   return (
     <>
-      <h2>Home</h2>
+      <h2>Formulario de busqueda</h2>
       <Formulario />
+      <h2>Peliculas mas populares</h2>
       <Populares />
+      <h2>Peliculas en cartel</h2>
     </>
   )
 }

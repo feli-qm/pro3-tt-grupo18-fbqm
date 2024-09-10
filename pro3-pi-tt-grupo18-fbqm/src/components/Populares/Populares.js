@@ -2,6 +2,7 @@ import "./Populares.css";
 import PopularCard from "../PopularCard/PopularCard";
 import { Component } from "react";
 import { options } from "../../options";
+import { Link } from "react-router-dom";
 
 
 class Populares extends Component {
@@ -22,6 +23,9 @@ class Populares extends Component {
     render(){
         return(
             <section className="movieCard-grid">
+                <div>
+                    <Link to="/populares">Ver todas</Link>
+                </div>
                 <div className="movie-card">
                     {
                         this.state.populares.length > 0 ?
@@ -31,7 +35,6 @@ class Populares extends Component {
                         <p>Cargando...</p>
                     }
                 </div>
-
             </section>
         )
     }
