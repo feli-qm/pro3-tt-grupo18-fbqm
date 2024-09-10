@@ -9,16 +9,20 @@ function App() {
   return (
     <>
       <header>
-        <img class="logo" src="hollywoodShines.png" alt=""></img>
-        <h1>Hollywood Shines</h1>
-        <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home}/>
-        <Route path="/favoritos" exact component={Favoritos}/>
-        <Route path="/maspopulares" exact component={MasPopulares}/>
-        <Route path="/encartel" exact component={EnCartel}/>
-      </Switch>
+        <div className="header-content">
+          <img class="logo" src="hollywoodShines.png" alt="Logo"/>
+          <h1>HOLLYWOOD SHINES</h1>
+        </div>
+        <nav>
+          <Navbar />
+        </nav>
       </header>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/favoritos" exact component={Favoritos} />
+        <Route path="/maspopulares" exact component={MasPopulares} />
+        <Route path="/encartel" exact component={EnCartel} />
+      </Switch>
       <footer>
         <p>Felicitas y Trinidad</p>
       </footer>
