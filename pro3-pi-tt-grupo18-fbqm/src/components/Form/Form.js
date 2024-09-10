@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class Formulario extends Component {
+class Form extends Component {
     constructor(props) {
       super(props);
       this.state = {valor: ''};
@@ -20,10 +20,10 @@ class Formulario extends Component {
          <label></label>
          <input type="text" onChange={(event)=>this.handleChange
             (event)} value={this.state.valor} />
-         <input type="submit" value="Submit" />
+         <button type="submit" value="Submit">Enviar</button>
        </form>
       );
     }
   }
   
-  export default Formulario
+  export default Form

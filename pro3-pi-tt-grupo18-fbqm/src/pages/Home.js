@@ -1,4 +1,4 @@
-import Formulario from "../components/Formulario/Formulario"
+import Formulario from "../components/Form/Form"
 
 const Home = () => {
   return (
