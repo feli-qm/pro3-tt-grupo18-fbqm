@@ -18,14 +18,16 @@ class PopularCard extends Component {
     }
 
     render(){
-        const {title, poster_path, overview} = this.props.populares;
+        console.log(this.props.populares);
+        
+        const {id, title, poster_path, overview} = this.props.populares;
         const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
         return (
             <article className="movie-card">
                 <div className='movieCard-content'>
                     <img src={imgUrl} alt=""/>
-                    <h2>{title}</h2>
+                    <Link to={`/unaPelicula/id/${id}`}><h2>{title}</h2></Link>
                     <p className={this.state.showExtra ? "show":"hide"}>{overview}</p>
                     <button onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripcion": "Ver descripcion"}</button>
                     <Link to="/detalle"><button>Ir a detalle</button></Link>

@@ -1,10 +1,12 @@
-import Navbar from "./components/Navbar/Navbar";
 import { Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Favoritos from "./pages/Favoritos";
 import MasPopulares from "./pages/MasPopulares";
 import EnCartel from "./pages/EnCartel";
-import { Link } from "react-router-dom";
+import UnaPelicula from "./pages/UnaPeli";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/favoritos" exact component={Favoritos} />
         <Route path="/maspopulares" exact component={MasPopulares} />
         <Route path="/encartel" exact component={EnCartel} />
+        <Route path="/unaPelicula/id/:id" exact component={UnaPelicula} />
       </Switch>
       <footer>
         <p>Felicitas y Trinidad</p>
