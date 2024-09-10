@@ -1,0 +1,6 @@
+.movie-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #3a3a3a;
+}
