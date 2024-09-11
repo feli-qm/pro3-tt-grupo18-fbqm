@@ -4,9 +4,7 @@ import React from 'react';
 const UnaPeli = ({match}) => {
 
   const id = match.params.id;
-
-  console.log(id);
-  
+  // con el id tengo que hacer un fetch? para encontrar las diferentes propiedades del id (title, rating, etc)
 
   return (
     <div>
