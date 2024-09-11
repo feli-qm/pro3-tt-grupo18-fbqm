@@ -25,7 +25,7 @@ function App() {
         <Route path="/favoritos" exact component={Favoritos} />
         <Route path="/maspopulares" exact component={MasPopulares} />
         <Route path="/encartel" exact component={EnCartel} />
-        <Route path="/unaPelicula/id/:id" exact component={UnaPelicula} />
+        <Route path="/detalleP/id/:id" exact component={UnaPelicula} />
       </Switch>
       <footer>
         <p>Felicitas y Trinidad</p>

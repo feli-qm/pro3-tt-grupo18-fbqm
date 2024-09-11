@@ -1,4 +1,5 @@
 import React from 'react';
+// import DetallePelicula from '../components/DetallePelicula/DetallePelicula';
 
 const UnaPeli = ({match}) => {
 
@@ -9,7 +10,7 @@ const UnaPeli = ({match}) => {
 
   return (
     <div>
-      <h2>hola mundo</h2>
+      <h2> Hola mundo </h2>
     </div>
   )
 }

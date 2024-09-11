@@ -26,11 +26,11 @@ class PopularCard extends Component {
         return (
             <article className="movie-card">
                 <div className='movieCard-content'>
-                    <img src={imgUrl} alt=""/>
-                    <Link to={`/unaPelicula/id/${id}`}><h2>{title}</h2></Link>
+                    <Link to={`/detalleP/id/${id}`}><img src={imgUrl} alt=""/></Link>
+                    <Link to={`/detalleP/id/${id}`}><h2>{title}</h2></Link>
                     <p className={this.state.showExtra ? "show":"hide"}>{overview}</p>
                     <button onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripcion": "Ver descripcion"}</button>
-                    <Link to="/detalle"><button>Ir a detalle</button></Link>
+                    <Link to={`/detalleP/id/${id}`}><button>Ir a detalle</button></Link>
                     <button>Agregar/quitar de favoritos</button>
 
                 </div>
