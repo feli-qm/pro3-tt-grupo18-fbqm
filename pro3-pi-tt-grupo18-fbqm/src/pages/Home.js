@@ -7,7 +7,7 @@ const Home = () => {
       <h2>Formulario de busqueda</h2>
       <Formulario />
       <h2>Peliculas mas populares</h2>
-      <Populares />
+      <Populares limit={5}/>
       <h2>Peliculas en cartel</h2>
     </>
   )

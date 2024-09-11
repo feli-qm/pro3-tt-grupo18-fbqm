@@ -4,7 +4,6 @@ import { Component } from "react";
 import { options } from "../../options";
 import { Link } from "react-router-dom";
 
-
 class Populares extends Component {
     constructor(props){
         super(props)
@@ -16,9 +15,12 @@ class Populares extends Component {
     componentDidMount(){
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=56c25df0bc04ec0dd18325a8ea74e10c&language=en-US&page=1', options)
         .then(response => response.json())
-        .then(data => this.setState({
-            populares: data.results.slice(0,5)
-        }))
+        .then(data => {
+            const numeroPelis = this.props.limit !== undefined ? this.props.limit : data.results.length;
+            this.setState({
+                populares: data.results.slice(0,numeroPelis)
+            })
+        })
         .catch(err => console.error(err))
     }
 
