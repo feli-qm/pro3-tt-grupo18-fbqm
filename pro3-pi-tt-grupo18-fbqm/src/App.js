@@ -6,7 +6,8 @@ import Home from "./pages/Home";
 import Favoritos from "./pages/Favoritos";
 import MasPopulares from "./pages/MasPopulares";
 import EnCartel from "./pages/EnCartel";
-import UnaPelicula from "./pages/UnaPeli";
+import DeltallePelicula from "./components/DeltallePelicula/DetallePelicula"
+//import Pelicula from "./pages/Pelicula";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
         <Route path="/favoritos" exact component={Favoritos} />
         <Route path="/maspopulares" exact component={MasPopulares} />
         <Route path="/encartel" exact component={EnCartel} />
-        <Route path="/detalleP/id/:id" exact component={UnaPelicula} />
+        <Route path="/detalle/id/:id" exact component={DeltallePelicula} />
       </Switch>
       <footer>
         <p>Felicitas y Trinidad</p>
