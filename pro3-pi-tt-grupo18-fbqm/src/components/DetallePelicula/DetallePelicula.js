@@ -1,7 +1,7 @@
 // import '../PopularCard/PopularCard.css';
 import { Component } from "react";
 
-class DeltallePelicula extends Component {
+class DetallePelicula extends Component {
     constructor(props) {
         super(props);
 
@@ -60,5 +60,5 @@ class DeltallePelicula extends Component {
     }
 }
 
-export default DeltallePelicula;
+export default DetallePelicula;
 

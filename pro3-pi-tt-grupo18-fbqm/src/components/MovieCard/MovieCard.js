@@ -1,8 +1,8 @@
-import '../PopularCard/PopularCard.css';
+import './MovieCard.css';
 import { Component } from "react";
 import { Link } from 'react-router-dom';
 
-class PopularCard extends Component {
+class MovieCard extends Component {
     constructor(props) {
         super(props)
 
@@ -18,9 +18,9 @@ class PopularCard extends Component {
     }
 
     render(){
-        console.log(this.props.populares);
+        console.log(this.props.movies);
         
-        const {id, title, poster_path, overview} = this.props.populares;
+        const {id, title, poster_path, overview} = this.props.movies;
         const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
         return (
@@ -38,4 +38,4 @@ class PopularCard extends Component {
     }
 }
 
-export default PopularCard;
+export default MovieCard;

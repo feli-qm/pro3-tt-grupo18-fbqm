@@ -1,5 +1,5 @@
 import Formulario from "../components/Form/Form";
-import Populares from "../components/Populares/Populares";
+import MovieGrid from "../components/MovieGrid/MovieGrid";
 
 const Home = () => {
   return (
@@ -7,8 +7,9 @@ const Home = () => {
       <h2>Formulario de busqueda</h2>
       <Formulario />
       <h2>Peliculas mas populares</h2>
-      <Populares limit={5}/>
+      <MovieGrid limit={5} url={'https://api.themoviedb.org/3/movie/popular?api_key=56c25df0bc04ec0dd18325a8ea74e10c&language=en-US&page=1'}/>
       <h2>Peliculas en cartel</h2>
+      <MovieGrid limit={5} url={'https://api.themoviedb.org/3/movie/now_playing?api_key=56c25df0bc04ec0dd18325a8ea74e10c'}/>
     </>
   )
 }

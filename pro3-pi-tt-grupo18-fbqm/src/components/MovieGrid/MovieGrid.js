@@ -1,24 +1,27 @@
-import "./Populares.css";
-import PopularCard from "../PopularCard/PopularCard";
+import "./MovieGrid.css";
+import MovieCard from "../MovieCard/MovieCard";
 import { Component } from "react";
 import { options } from "../../options";
 import { Link } from "react-router-dom";
 
-class Populares extends Component {
+class Movies extends Component {
     constructor(props){
         super(props)
         this.state = {
-            populares: []
+            movies: []
         }
     }
     
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/movie/popular?api_key=56c25df0bc04ec0dd18325a8ea74e10c&language=en-US&page=1', options)
+
+        const apiUrl = this.props.url; // prop para decidir entre popular y cartelera para reutilizar el comp
+
+        fetch(apiUrl, options)
         .then(response => response.json())
         .then(data => {
             const numeroPelis = this.props.limit !== undefined ? this.props.limit : data.results.length;
             this.setState({
-                populares: data.results.slice(0,numeroPelis)
+                movies: data.results.slice(0,numeroPelis)
             })
         })
         .catch(err => console.error(err))
@@ -28,13 +31,13 @@ class Populares extends Component {
         return(
             <section className="movieCard-grid">
                 <div>
-                    <Link to="/populares">Ver todas</Link>
+                    <Link to="/maspopulares">Ver todas</Link>
                 </div>
                 <div className="movie-card">
                     {
-                        this.state.populares.length > 0 ?
-                        this.state.populares.map((popular, index) =>
-                        <PopularCard populares={popular} key={index} />)
+                        this.state.movies.length > 0 ?
+                        this.state.movies.map((movie, index) =>
+                        <MovieCard movies={movie} key={index} />)
                         :
                         <p>Cargando...</p>
                     }
@@ -44,4 +47,4 @@ class Populares extends Component {
     }
 }
 
-export default Populares;
+export default Movies;

@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Favoritos from "./pages/Favoritos";
 import MasPopulares from "./pages/MasPopulares";
 import EnCartel from "./pages/EnCartel";
-import DeltallePelicula from "./components/DeltallePelicula/DetallePelicula"
+import DeltallePelicula from "./components/DetallePelicula/DetallePelicula"
 //import Pelicula from "./pages/Pelicula";
 
 function App() {
