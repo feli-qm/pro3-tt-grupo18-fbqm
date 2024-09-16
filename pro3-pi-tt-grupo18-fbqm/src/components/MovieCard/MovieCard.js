@@ -7,6 +7,10 @@ class MovieCard extends Component {
         super(props)
 
         this.state = {
+            esFavorito: false
+        }
+
+        this.state = {
             showExtra: false
         }
     }
@@ -14,6 +18,46 @@ class MovieCard extends Component {
     handleShowExtra(){
         this.setState({
             showExtra: !this.state.showExtra
+        })
+    }
+
+    componentDidMount(){
+        const storage = localStorage.getItem('favoritos')
+        if (storage !== null){
+            const parsedArray = JSON.parse(storage)
+            const estaEnFavoritos = parsedArray.includes(this.props.movie.id)
+            this.setState({
+                esFavorito: estaEnFavoritos
+            })
+        }
+    }
+
+    agregarFavorito(){
+        const storage = localStorage.getItem('favoritos')
+        if (storage !== null){
+            const parsedArray = JSON.parse(storage)
+            parsedArray.push(this.props.movie.id)
+            const stringArray = JSON.stringify(parsedArray)
+            localStorage.setItem('favoritos', stringArray)
+
+        }else{
+            const primerMovie = [this.props.movie.id]
+            const stringArray = JSON.stringify(primerMovie)
+            localStorage.setItem('favoritos', stringArray)
+        }
+        this.setState({
+            esFavorito: true
+        })
+    }
+
+    sacarFavorito(){
+        const storage = localStorage.getItem('favoritos')
+        const parsedArray = JSON.parse(storage)
+        const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id)
+        const stringArray = JSON.stringify(favoritosRestantes)
+            localStorage.setItem('favoritos', stringArray)
+        this.setState({
+            esFavorito: false
         })
     }
 
@@ -31,7 +75,7 @@ class MovieCard extends Component {
                     <p className={this.state.showExtra ? "show":"hide"}>{overview}</p><br />
                     <button onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripcion": "Ver descripcion"}</button><br />
                     <Link to={`/detalle/id/${id}`}><button>Ir a detalle</button></Link><br />
-                    <button>Agregar/quitar de favoritos</button><br />
+                    <button onClick={()=> !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito ()}>{!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button><br />
                 </div>
             </article>
         )
