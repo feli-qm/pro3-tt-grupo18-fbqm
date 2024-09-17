@@ -45,8 +45,8 @@ class DetallePelicula extends Component {
 
 
         return (
-            <section className="movie-detail">
-                <div className='detail-content'>
+            <section className="movie-card">
+                <div className='movieCard-content'>
                     <h2>{title}</h2><br />
                     <img src={imgUrl} alt={title} /><br />
                     <p>Fecha de estreno: {release_date}</p><br/>
