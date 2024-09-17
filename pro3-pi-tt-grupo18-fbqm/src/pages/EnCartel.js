@@ -1,3 +1,4 @@
+//modiicar como populares
 import MovieGrid from "../components/MovieGrid/MovieGrid";
 
 const EnCartel = () => {

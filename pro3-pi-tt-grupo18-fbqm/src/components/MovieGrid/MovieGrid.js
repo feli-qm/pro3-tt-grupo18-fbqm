@@ -4,30 +4,17 @@ import { Component } from "react";
 import { options } from "../../options";
 import { Link } from "react-router-dom";
 
-class Movies extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-            movies: []
-        }
-    }
-    
-    componentDidMount(){
+const MovieGrid = (props) => {
+    return (
+      <>
+      {props.movies.map((movie) => <MovieCard movies={movie}/>)}
+      </>
+    )
+  }
+  
+  export default MovieGrid
 
-        const apiUrl = this.props.url; // prop para decidir entre popular y cartelera para reutilizar el comp
-
-        fetch(apiUrl, options)
-        .then(response => response.json())
-        .then(data => {
-            const numeroPelis = this.props.limit !== undefined ? this.props.limit : data.results.length;
-            this.setState({
-                movies: data.results.slice(0,numeroPelis)
-            })
-        })
-        .catch(err => console.error(err))
-    }
-
-    render(){
+    /*render(){
         return(
             <section className="movieCard-grid">
                 <div>
@@ -47,4 +34,4 @@ class Movies extends Component {
     }
 }
 
-export default Movies;
+export default Movies;*/

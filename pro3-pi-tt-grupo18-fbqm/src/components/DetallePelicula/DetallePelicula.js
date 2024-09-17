@@ -12,10 +12,9 @@ class DetallePelicula extends Component {
 
     componentDidMount() {
         // busco el ID en la ruta de navegación
-        const { peliculaId } = this.props.match.params;
-        console.log(peliculaId);
+        const { id } = this.props.match.params;
 
-        fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US`)
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US`)
             .then(response => response.json())
             .then(data => {
                 this.setState({ pelicula: data })

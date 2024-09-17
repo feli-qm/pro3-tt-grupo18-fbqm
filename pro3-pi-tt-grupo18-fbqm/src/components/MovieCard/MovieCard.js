@@ -25,7 +25,7 @@ class MovieCard extends Component {
         const storage = localStorage.getItem('favoritos')
         if (storage !== null){
             const parsedArray = JSON.parse(storage)
-            const estaEnFavoritos = parsedArray.includes(this.props.movie.id)
+            const estaEnFavoritos = parsedArray.includes(this.props.movies.id)
             this.setState({
                 esFavorito: estaEnFavoritos
             })
@@ -36,12 +36,12 @@ class MovieCard extends Component {
         const storage = localStorage.getItem('favoritos')
         if (storage !== null){
             const parsedArray = JSON.parse(storage)
-            parsedArray.push(this.props.movie.id)
+            parsedArray.push(this.props.movies.id)
             const stringArray = JSON.stringify(parsedArray)
             localStorage.setItem('favoritos', stringArray)
 
         }else{
-            const primerMovie = [this.props.movie.id]
+            const primerMovie = [this.props.movies.id]
             const stringArray = JSON.stringify(primerMovie)
             localStorage.setItem('favoritos', stringArray)
         }
@@ -53,7 +53,7 @@ class MovieCard extends Component {
     sacarFavorito(){
         const storage = localStorage.getItem('favoritos')
         const parsedArray = JSON.parse(storage)
-        const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id)
+        const favoritosRestantes = parsedArray.filter(id => id !== this.props.movies.id)
         const stringArray = JSON.stringify(favoritosRestantes)
             localStorage.setItem('favoritos', stringArray)
         this.setState({
