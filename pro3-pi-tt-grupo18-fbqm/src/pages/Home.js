@@ -1,11 +1,11 @@
-import Formulario from "../components/Form/Form";
+import SearchForm from "../components/SearchForm/SearchForm"
 import HomeMovies from "../components/HomeMovies/HomeMovies"
 
 const Home = () => {
   return (
     <>
       <h2>Formulario de busqueda</h2>
-      <Formulario />
+      <SearchForm />
       <h2>Peliculas mas populares</h2>
       <HomeMovies link="/maspopulares" limit={5} url={'https://api.themoviedb.org/3/movie/popular?api_key=56c25df0bc04ec0dd18325a8ea74e10c&language=en-US&page=1'}/>
       <h2>Peliculas en cartel</h2>

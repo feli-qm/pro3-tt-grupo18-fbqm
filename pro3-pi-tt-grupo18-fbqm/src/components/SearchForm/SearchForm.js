@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class Form extends Component {
+class SearchForm extends Component {
     constructor(props) {
       super(props);
       this.state = {valor: ''};
@@ -26,4 +26,4 @@ class Form extends Component {
     }
   }
   
-  export default Form
+  export default SearchForm
