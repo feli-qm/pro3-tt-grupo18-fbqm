@@ -47,12 +47,12 @@ class DetallePelicula extends Component {
         return (
             <section className="movie-card">
                 <div className='movieCard-content'>
-                    <h2>{title}</h2><br />
+                    <h2><strong>{title}</strong></h2><br />
                     <img src={imgUrl} alt={title} /><br />
-                    <p>Fecha de estreno: {release_date}</p><br/>
-                    <p>Calificación: {vote_average}/10</p>
-                    <p>Duración: {runtime}</p><br/>
-                    <p>Sinopsis: {overview}</p>
+                    <p><strong>Fecha de estreno:</strong> {release_date}</p>
+                    <p><strong>Calificación:</strong> {vote_average}/10</p>
+                    <p><strong>Duración:</strong> {runtime}</p>
+                    <p><strong>Sinopsis:</strong> {overview}</p>
                 </div>
             </section>
         )

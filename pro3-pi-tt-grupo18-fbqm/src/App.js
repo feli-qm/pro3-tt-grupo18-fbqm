@@ -7,7 +7,6 @@ import Favoritos from "./pages/Favoritos";
 import MasPopulares from "./pages/MasPopulares";
 import EnCartel from "./pages/EnCartel";
 import DetallePelicula from "./components/DetallePelicula/DetallePelicula"
-//import Pelicula from "./pages/Pelicula";
 
 function App() {
   return (

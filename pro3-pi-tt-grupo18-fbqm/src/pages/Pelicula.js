@@ -1,4 +1,4 @@
-import DetallePelicula from "../components/DeltallePelicula/DetallePelicula";
+import DetallePelicula from "../components/DetallePelicula/DetallePelicula"
 
 const Pelicula = () => {
   return(
