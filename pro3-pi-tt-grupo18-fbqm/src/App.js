@@ -8,6 +8,7 @@ import MasPopulares from "./pages/MasPopulares";
 import EnCartel from "./pages/EnCartel";
 import DetallePelicula from "./components/DetallePelicula/DetallePelicula"
 import NotFound from "./pages/NotFound";
+import SearchResults from './pages/SearchResults';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/maspopulares" exact component={MasPopulares} />
         <Route path="/encartel" exact component={EnCartel} />
         <Route path="/detalle/id/:id" exact component={DetallePelicula} />
+        <Route path="/resultadoBusqueda" component={SearchResults} />
         <Route component={NotFound} />
       </Switch>
       <footer>

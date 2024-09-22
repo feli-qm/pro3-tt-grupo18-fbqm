@@ -28,20 +28,23 @@ class HomeMovies extends Component {
 
     render(){
         return(
-            <section className="movieCard-grid">
-                <div>
-                    <Link to={this.props.link}>Ver todas</Link>
-                </div>
-                <div className="movie-card">
-                    {
-                        this.state.movies.length > 0 ?
-                        this.state.movies.map((movie, index) =>
-                        <MovieCard movies={movie} key={index} />)
-                        :
-                        <p>Cargando...</p>
-                    }
-                </div>
-            </section>
+            <>
+                <h2>Peliculas mas populares</h2>
+                <section className="movieCard-grid">
+                    <div>
+                        <Link to={this.props.link}>Ver todas</Link>
+                    </div>
+                    <div className="movie-card">
+                        {
+                            this.state.movies.length > 0 ?
+                            this.state.movies.map((movie, index) =>
+                            <MovieCard movies={movie} key={index} />)
+                            :
+                            <p>Cargando...</p>
+                        }
+                    </div>
+                </section>
+            </>
         )
     }
 }

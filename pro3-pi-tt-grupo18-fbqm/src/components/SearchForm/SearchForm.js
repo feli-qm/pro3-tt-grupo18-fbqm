@@ -1,29 +1,37 @@
 import { Component } from "react";
 
 class SearchForm extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {valor: ''};
-    }
   
-    handleSubmit(event) {
-      event.preventDefault();
-    }
-  
-    handleChange(event) {
-      this.setState({valor: event.target.value}, ()=>console.log(event));
-    }
-  
-    render() {
-      return (
-       <form onSubmit={(event)=>this.handleSubmit(event)}>
-         <label></label>
-         <input type="text" onChange={(event)=>this.handleChange
-            (event)} value={this.state.valor} />
-         <button type="submit" value="Submit">Enviar</button>
-       </form>
-      );
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      valor: ''
+    };
   }
-  
-  export default SearchForm
+
+  handleInputChange(event){
+    this.setState({
+      valor: event.target.value
+    })
+  }
+
+  handleInputSubmit(){
+    this.props.history.push('/resultadoBusqueda/', { valor: this.state.valor })
+  }
+
+  render() {
+    console.log(this.state.valor);
+    
+    return (
+      <>
+        <h2>Formulario de busqueda</h2>
+        <div>
+          <input onChange={ (event) => this.handleInputChange(event) } type='text' name="valor" value={this.state.valor} />
+          <button onClick={ () => this.handleInputSubmit() }>Buscar</button>
+        </div>
+      </>
+    );
+  }
+}
+
+export default SearchForm;
