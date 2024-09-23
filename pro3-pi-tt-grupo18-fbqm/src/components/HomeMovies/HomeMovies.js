@@ -29,7 +29,6 @@ class HomeMovies extends Component {
     render(){
         return(
             <>
-                <h2>Peliculas mas populares</h2>
                 <section className="movieCard-grid">
                     <div>
                         <Link to={this.props.link}>Ver todas</Link>

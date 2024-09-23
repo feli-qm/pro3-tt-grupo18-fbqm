@@ -1,12 +1,12 @@
 import DetallePelicula from "../components/DetallePelicula/DetallePelicula"
 
-const Pelicula = () => {
+const Detalle = (props) => {
   return(
     <>
     <h2>Detalle de la pelicula</h2>
-    <DetallePelicula />
+    <DetallePelicula match={props.match} />
     </>
   )
 }
 
-export default Pelicula;
+export default Detalle;
