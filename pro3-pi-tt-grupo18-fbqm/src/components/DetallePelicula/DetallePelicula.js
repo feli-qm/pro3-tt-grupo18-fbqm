@@ -1,4 +1,3 @@
-// import '../PopularCard/PopularCard.css';
 import { Component } from "react";
 import { options } from "../../options";
 import Loading from "../Loading/Loading";
