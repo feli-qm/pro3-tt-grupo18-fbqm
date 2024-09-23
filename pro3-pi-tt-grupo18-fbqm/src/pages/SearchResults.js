@@ -1,5 +1,6 @@
 import { Component } from "react";
 import MovieGrid from "../components/MovieGrid/MovieGrid";
+import Loading from '../components/Loading/Loading'
 
 class SearchResults extends Component {
     
@@ -8,7 +9,8 @@ class SearchResults extends Component {
 
         this.state = {
             movielist: [],
-            cargando: true
+            cargando: true,
+            error: null
         }
     }
 
@@ -20,27 +22,50 @@ class SearchResults extends Component {
 
         fetch(url)
             .then( response => response.json() )
+
             .then( (data) => {
-                console.log(data);
+
                 if (data.results) {
-                    this.setState({movielist: data.results});
-                } else {
-                    console.log('No se encuentra esa pelicula');   
+                    this.setState({
+                        movielist: data.results,
+                        cargando: false
+                    });
+                } 
+                else {
+                    this.setState({
+                        movielist: [],
+                        cargando: false
+                    })  
                 }
             })
+
             .catch(err => {
-                console.log('error encontrado en search results: ', err)
-                this.setState({cargando: false})
+                console.error('El error encontrado en search results: ', err)
+                this.setState({
+                    cargando: false,
+                    error: "Error al buscar películas"
+                })
             })
     }
 
     render() {
-        console.log(this.state);
+        const { movielist, cargando, error } = this.state;
 
         return (
             <>
-                <h2>Resultado de búsqueda: {this.props.location.state?.valor}</h2>
-                <MovieGrid movies={this.state.movielist}/>
+                <section>
+                    <h2>Resultado de búsqueda: {this.props.location.state?.valor}</h2>
+
+                    {cargando ? 
+                            (<Loading />) 
+                        : error ? 
+                            (<p>{error}</p>)
+                        : (movielist.length > 0) ? 
+                            (<MovieGrid movies={this.state.movielist} />)
+                        : (<p>No se encontraron resultados para tu búsqueda</p>)
+                    }
+                </section>
+                
             </>
         )
     }

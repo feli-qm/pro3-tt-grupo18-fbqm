@@ -25,10 +25,10 @@ class SearchForm extends Component {
     return (
       <>
         <h2>Formulario de busqueda</h2>
-        <div>
+        <form onSubmit={(event) => this.handleInputSubmit(event)}>
           <input onChange={ (event) => this.handleInputChange(event) } type='text' name="valor" value={this.state.valor} />
           <button onClick={ () => this.handleInputSubmit() }>Buscar</button>
-        </div>
+        </form>
       </>
     );
   }
