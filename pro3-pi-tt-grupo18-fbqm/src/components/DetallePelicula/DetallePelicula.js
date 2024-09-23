@@ -10,10 +10,12 @@ class DetallePelicula extends Component {
 
         this.state = {
             pelicula: null,
+            esFavorito: false
         };
     }
 
     componentDidMount() {
+
         // busco el ID en la ruta de navegación
         const { id } = this.props.match.params;
 
@@ -23,6 +25,47 @@ class DetallePelicula extends Component {
                 this.setState({ pelicula: data })
             })
             .catch(err => console.log(err))
+
+        // FAVORITO!!
+        const storge = localStorage.getItem('favoritos')
+        if (storge !== null){
+            const parsedArray = JSON.parse(storge)
+            console.log('this.props: ', this.props);
+            
+            const estaEnFavoritos = parsedArray.includes(this.props.match.params.id)
+            this.setState({
+                esFavorito: estaEnFavoritos
+            })
+        }
+    }
+
+    agregarFavorito(){
+        const storge = localStorage.getItem('favoritos')
+        
+        if (storge !== null){
+            const parsedArray = JSON.parse(storge)
+            parsedArray.push(this.props.match.params.id)
+            const stringArray = JSON.stringify(parsedArray)
+            localStorage.setItem('favoritos', stringArray)
+        }
+        else{
+            const primerMovie = [this.props.match.params.id]
+            const stringArray = JSON.stringify(primerMovie)
+            localStorage.setItem('favoritos', stringArray)
+        }
+
+        this.setState({ esFavorito: true })
+    }
+
+    sacarFavorito(){
+        const storge = localStorage.getItem('favoritos')
+        const parsedArray = JSON.parse(storge)
+        const favoritosRestantes = parsedArray.filter(id => id !== this.props.match.params.id)
+        const stringArray = JSON.stringify(favoritosRestantes)
+            localStorage.setItem('favoritos', stringArray)
+        this.setState({
+            esFavorito: false
+        })
     }
 
     render(){
@@ -47,6 +90,7 @@ class DetallePelicula extends Component {
                         <p><strong>Duración:</strong> {pelicula.runtime}</p>
                         <p><strong>Sinopsis:</strong> {pelicula.overview}</p>
                         <p><strong>Género:</strong> {pelicula.genres.map(genero => genero.name).join(', ')}</p>
+                        <button onClick={()=> !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito ()}>{!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button><br />
                     </div>
                 </section>
             )
