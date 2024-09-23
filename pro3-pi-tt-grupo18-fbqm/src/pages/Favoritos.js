@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MovieCard from '../components/MovieCard/MovieCard'
+import Loading from '../components/Loading/Loading'
 
 class Favoritos extends Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Favoritos extends Component {
   render() {
     return (
       <div>
-        {!this.state.isLoading ? (this.state.movies.map((movie) => <MovieCard key={movie.id} movies={movie}/>)) : (<p>Loading...</p>)}
+        {!this.state.isLoading ? (this.state.movies.map((movie) => <MovieCard key={movie.id} movies={movie}/>)) : (<>No agregaste peliculas a favoritos todavía!</>)}
       </div>
     )
   }
