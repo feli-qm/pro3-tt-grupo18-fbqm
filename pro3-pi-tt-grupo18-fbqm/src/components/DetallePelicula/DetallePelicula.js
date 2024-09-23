@@ -2,6 +2,7 @@
 import { Component } from "react";
 import { options } from "../../options";
 import Loading from "../Loading/Loading";
+import FavButton from "../FavButton/FavButton";
 
 class DetallePelicula extends Component {
     
@@ -37,36 +38,7 @@ class DetallePelicula extends Component {
                 esFavorito: estaEnFavoritos
             })
         }
-    }
-
-    agregarFavorito(){
-        const storge = localStorage.getItem('favoritos')
-        
-        if (storge !== null){
-            const parsedArray = JSON.parse(storge)
-            parsedArray.push(this.props.match.params.id)
-            const stringArray = JSON.stringify(parsedArray)
-            localStorage.setItem('favoritos', stringArray)
-        }
-        else{
-            const primerMovie = [this.props.match.params.id]
-            const stringArray = JSON.stringify(primerMovie)
-            localStorage.setItem('favoritos', stringArray)
-        }
-
-        this.setState({ esFavorito: true })
-    }
-
-    sacarFavorito(){
-        const storge = localStorage.getItem('favoritos')
-        const parsedArray = JSON.parse(storge)
-        const favoritosRestantes = parsedArray.filter(id => id !== this.props.match.params.id)
-        const stringArray = JSON.stringify(favoritosRestantes)
-            localStorage.setItem('favoritos', stringArray)
-        this.setState({
-            esFavorito: false
-        })
-    }
+    } 
 
     render(){
 
@@ -90,7 +62,7 @@ class DetallePelicula extends Component {
                         <p><strong>Duración:</strong> {pelicula.runtime}</p>
                         <p><strong>Sinopsis:</strong> {pelicula.overview}</p>
                         <p><strong>Género:</strong> {pelicula.genres.map(genero => genero.name).join(', ')}</p>
-                        <button onClick={()=> !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito ()}>{!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button><br />
+                        <FavButton id={pelicula.id}/>
                     </div>
                 </section>
             )
