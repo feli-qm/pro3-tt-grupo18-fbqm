@@ -47,7 +47,6 @@ class MasPopulares extends Component {
     const filteredMovies = this.state.movielist.filter((movie) => movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
 
     console.log(filteredMovies)
-    return filteredMovies
 
   }
 
@@ -57,7 +56,7 @@ class MasPopulares extends Component {
         <div>
           <h2>Peliculas mas populares</h2>
           <input type="text" value={this.state.searchQuery} onChange={(e) => this.handleChange(e)} />
-          <MovieGrid movies={this.filterMovies()} />
+          <MovieGrid movies={this.state.movielist} />
           <button onClick={() => this.loadMovies()}>Cargar mas</button>
         </div>
       </>

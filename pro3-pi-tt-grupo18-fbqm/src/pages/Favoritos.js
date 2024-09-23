@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import MovieCard from '../components/MovieCard/MovieCard'
-import Loading from '../components/Loading/Loading'
 
 class Favoritos extends Component {
   constructor(props) {
