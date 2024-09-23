@@ -83,7 +83,7 @@ class DetallePelicula extends Component {
             return (
                 <section className="movie-card">
                     <div className='movieCard-content'>
-                        <h2><strong>{pelicula.title}</strong></h2><br />
+                        <h2><strong>{pelicula.title}</strong></h2>
                         <img src={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`} alt={pelicula.title} /><br />
                         <p><strong>Fecha de estreno:</strong> {pelicula.release_date}</p>
                         <p><strong>Calificación:</strong> {pelicula.vote_average}/10</p>

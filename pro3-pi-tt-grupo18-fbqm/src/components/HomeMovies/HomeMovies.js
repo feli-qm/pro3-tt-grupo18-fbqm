@@ -33,7 +33,7 @@ class HomeMovies extends Component {
                     <div>
                         <Link to={this.props.link}>Ver todas</Link>
                     </div>
-                    <div className="movie-card">
+                    <div className="movie-card-container">
                         {
                             this.state.movies.length > 0 ?
                             this.state.movies.map((movie, index) =>

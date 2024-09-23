@@ -1,11 +1,16 @@
-import "./MovieGrid.css";
+import '../MovieCard/MovieCard.css'
+import Loading from '../Loading/Loading';
 import MovieCard from "../MovieCard/MovieCard";
 
 const MovieGrid = (props) => {
-    console.log(props);
+    console.log(props.movies);
     return (
       <>
-      <div className="movieCard-grid movie-card">{props.movies.map((movie) => <MovieCard movies={movie}/>)}</div>
+        { (!props.movies) ? (
+          <Loading />
+        ) : (
+          <div className="movie-card-container">{props.movies.map((movie) => <MovieCard key={movie.id} movies={movie}/>)}</div>
+        )}
       </>
     )
   }
