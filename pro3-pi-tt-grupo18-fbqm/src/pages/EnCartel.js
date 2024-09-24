@@ -64,12 +64,16 @@ handleLoadMore(){
 render(){
   return (
     <>
-      <div>
-        <h2>Peliculas en cartel</h2>
-        <input type="text" onChange={(e) => this.handleFilteredChange(e)} value={this.state.filterValue} />
-        <button onClick={() => this.handleResetFilter()}>Reset filter</button>
+      <div className="filter-container">
+        <h2 className="page-name">Peliculas en cartel</h2>
+
+        <div className="input-container">
+          <input type="text" onChange={(e) => this.handleFilteredChange(e)} value={this.state.filterValue} />
+          <button onClick={() => this.handleResetFilter()}>Reset filter</button>
+        </div>
+      
         <MovieGrid movies={this.state.filteredMovies}/>
-        <button onClick={() => this.handleLoadMore()}>Cargar mas</button>
+        <button className="btn-cargar-mas" onClick={() => this.handleLoadMore()}>Cargar mas</button>
       </div>
     </>
   )

@@ -26,7 +26,7 @@ class SearchForm extends Component {
     return (
       <>
         <div className="search-form-container">
-          <h2>Buscador de peliculas</h2>
+          <h2>Buscador de Peliculas</h2>
           <form className="search-form" onSubmit={(event) => this.handleInputSubmit(event)}>
             <input 
               onChange={ (event) => this.handleInputChange(event) } 
