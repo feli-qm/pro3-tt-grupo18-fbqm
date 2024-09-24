@@ -29,6 +29,14 @@ class MasPopulares extends Component {
       .catch(err => console.error(err))
   }
 
+  handleFilteredChange(e) {
+    const userValue = e.target.value;
+    this.setState({
+      filterValue: userValue,
+      filteredMovies: this.state.movielist.filter(movie => movie.title.toLowerCase().includes(userValue.toLowerCase()))
+    })
+  }
+
   handleLoadMore() {
     const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=56c25df0bc04ec0dd18325a8ea74e10c&language=en-US&page=${this.state.actualPage}`; // prop para decidir entre popular y cartelera para reutilizar el comp
 
@@ -43,14 +51,6 @@ class MasPopulares extends Component {
         })
       })
       .catch(err => console.error(err))
-  }
-
-  handleFilteredChange(e) {
-    const userValue = e.target.value;
-    this.setState({
-      filterValue: userValue,
-      filteredMovies: this.state.movielist.filter(movie => movie.title.toLowerCase().includes( userValue.toLowerCase() ) )
-    })
   }
 
   handleResetFilter(){
