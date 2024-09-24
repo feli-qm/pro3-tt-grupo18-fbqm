@@ -45,22 +45,19 @@ class MasPopulares extends Component {
       .catch(err => console.error(err))
   }
 
-  handleChange(e) {
+  handleFilteredChange(e) {
+    const userValue = e.target.value;
     this.setState({
-      searchQuery: e.target.value
+      filterValue: userValue,
+      filteredMovies: this.state.movielist.filter(movie => movie.title.toLowerCase().includes( userValue.toLowerCase() ) )
     })
-    this.filterMovies()
   }
 
-  filterMovies() {
-    if (this.state.searchQuery === '') {
-      return this.state.movielist
-    }
-
-    const filteredMovies = this.state.movielist.filter((movie) => movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
-
-    console.log(filteredMovies)
-
+  handleResetFilter(){
+    this.setState({
+      filterValue:'',
+      filteredMovies: this.state.movielist
+    })
   }
 
   render() {
@@ -68,8 +65,9 @@ class MasPopulares extends Component {
       <>
         <div>
           <h2>Peliculas mas populares</h2>
-          <input type="text" value={this.state.searchQuery} onChange={(e) => this.handleChange(e)} />
-          <MovieGrid movies={this.state.movielist} />
+          <input type="text" onChange={(e) => this.handleFilteredChange(e)} value={this.state.filterValue} />
+          <button onClick={() => this.handleResetFilter()}>Reset filter</button>
+          <MovieGrid movies={this.state.filteredMovies} />
           <button onClick={() => this.handleLoadMore()}>Cargar mas</button>
         </div>
       </>
