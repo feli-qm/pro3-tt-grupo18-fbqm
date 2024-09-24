@@ -1,4 +1,5 @@
 import { Component } from "react";
+import './FavButton.css'
 
 class FavButton extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class FavButton extends Component {
     render() {
     return (
         <>
-            <button onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>{!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button><br />
+            <button className="favoritos-boton" onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>{!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button><br />
         </>
     )
 }

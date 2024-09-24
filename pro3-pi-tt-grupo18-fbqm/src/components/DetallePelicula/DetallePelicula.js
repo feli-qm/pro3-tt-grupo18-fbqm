@@ -40,6 +40,8 @@ class DetallePelicula extends Component {
             console.log("pelicula.genres: ", pelicula.genres);
             
             return (
+                <>
+                <h2 className="page-name">Detalle de la pelicula</h2>
                 <section className="movie-detail-container">
                     <div className="movie-image">
                         <img src={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`} alt={pelicula.title} />
@@ -54,6 +56,7 @@ class DetallePelicula extends Component {
                         <FavButton id={pelicula.id} />
                     </div>
                 </section>
+                </>
             );
             
         }

@@ -55,22 +55,48 @@
 
   /* Botón "Ver más" */
   .btn-ver-mas {
-    background-color: #4caf50; /* Verde */
-    color: white;
-  }
+    background-color: white; /* Fondo blanco */
+    color: #007bff; /* Texto en azul */
+    border: 2px solid #007bff; /* Borde azul */
+    padding: 5px 5px;
+    margin-left: 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
 
-  .btn-ver-mas:hover {
-    background-color: #388e3c; /* Verde oscuro */
-  }
+.btn-ver-mas:hover {
+    background-color: #007bff; /* Fondo azul */
+    color: white; /* Texto en blanco */
+}
+
+.btn-ver-mas a {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Hereda el color del botón */
+}
 
   /* Botón "Ir a detalle" */
   .btn-detalle {
-    background-color: #2196f3; /* Azul */
-    color: white;
-  }
+    background-color: white; /* Fondo blanco */
+    color: #007bff; /* Texto en azul */
+    border: 2px solid #007bff; /* Borde azul */
+    padding: 5px 5px;
+    margin-left: 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
 
   .btn-detalle:hover {
-    background-color: #1976d2; /* Azul más oscuro */
+      background-color: #007bff; /* Fondo azul */
+      color: white; /* Texto en blanco */
+  }
+
+  .btn-detalle a {
+      text-decoration: none; /* Quita el subrayado del enlace */
+      color: inherit; /* Hereda el color del botón */
   }
 
   /* Botón "Agregar a favoritos" */

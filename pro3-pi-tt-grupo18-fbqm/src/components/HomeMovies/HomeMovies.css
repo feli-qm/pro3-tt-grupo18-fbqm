@@ -1,0 +1,24 @@
+/* Estilo base del botón "Ver todas" */
+.ver-mas-boton {
+    background-color: white; /* Fondo blanco */
+    color: #007bff; /* Texto en azul */
+    border: 2px solid #007bff; /* Borde azul */
+    padding: 5px 5px;
+    margin-left: 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Estilo del botón al pasar el mouse */
+.ver-mas-boton:hover {
+    background-color: #007bff; /* Fondo azul */
+    color: white; /* Texto en blanco */
+}
+
+/* Estilo del enlace dentro del botón para que parezca parte del botón */
+.ver-mas-boton a {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: inherit; /* Hereda el color del botón */
+}

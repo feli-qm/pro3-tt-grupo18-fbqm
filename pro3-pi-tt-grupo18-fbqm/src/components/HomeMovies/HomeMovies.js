@@ -2,6 +2,7 @@ import MovieCard from "../MovieCard/MovieCard";
 import { Component } from "react";
 import { options } from "../../options";
 import { Link } from "react-router-dom";
+import "./HomeMovies.css"
 
 class HomeMovies extends Component {
     constructor(props){
@@ -31,7 +32,7 @@ class HomeMovies extends Component {
             <>
                 <section className="movieCard-grid">
                     <div>
-                        <Link to={this.props.link}>Ver todas</Link>
+                        <button className="ver-mas-boton" onM><Link to={this.props.link}>Ver todas</Link></button>
                     </div>
                     <div className="movie-card-container">
                         {

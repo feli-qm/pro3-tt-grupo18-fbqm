@@ -141,6 +141,11 @@ main {
     color: #fff;
 }
 
+.page-name{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
 /* footer */
 footer {
     background-color: rgb(32,50,103);
