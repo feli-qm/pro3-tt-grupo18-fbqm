@@ -1,8 +1,8 @@
-// import '../PopularCard/PopularCard.css';
 import { Component } from "react";
 import { options } from "../../options";
 import Loading from "../Loading/Loading";
 import FavButton from "../FavButton/FavButton";
+import './DetallePelicula.css';
 
 class DetallePelicula extends Component {
     
@@ -40,19 +40,22 @@ class DetallePelicula extends Component {
             console.log("pelicula.genres: ", pelicula.genres);
             
             return (
-                <section className="movie-card">
-                    <div className='movieCard-content'>
-                        <h2><strong>{pelicula.title}</strong></h2><br />
-                        <img src={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`} alt={pelicula.title} /><br />
+                <section className="movie-detail-container">
+                    <div className="movie-image">
+                        <img src={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`} alt={pelicula.title} />
+                    </div>
+                    <div className="movie-details">
+                        <h2><strong>{pelicula.title}</strong></h2>
                         <p><strong>Fecha de estreno:</strong> {pelicula.release_date}</p>
                         <p><strong>Calificación:</strong> {pelicula.vote_average}/10</p>
-                        <p><strong>Duración:</strong> {pelicula.runtime}</p>
+                        <p><strong>Duración:</strong> {pelicula.runtime} minutos</p>
                         <p><strong>Sinopsis:</strong> {pelicula.overview}</p>
                         <p><strong>Género:</strong> {pelicula.genres.map(genero => genero.name).join(', ')}</p>
                         <FavButton id={pelicula.id} />
                     </div>
                 </section>
-            )
+            );
+            
         }
     }
 }
