@@ -5,19 +5,21 @@ import { options } from "../options";
 class EnCartel extends Component {
   constructor(props){
       super(props)
+
       this.state = {
           movielist: [],
-          page: 1
+          filteredMovies: [],
+          filterValue: "",
+          actualPage: 1
       }
   }
 
   componentDidMount(){
-    const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=56c25df0bc04ec0dd18325a8ea74e10c&page=${this.state.page}`;
+    const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=56c25df0bc04ec0dd18325a8ea74e10c&page=${this.state.actualPage}`;
 
     fetch(apiUrl, options)
       .then(response => response.json())
       .then(data => {
-        //const numeroPelis = this.props.limit !== undefined ? this.props.limit : data.results.length;
         this.setState({
           movielist: data.results,
           filteredMovies: data.results,
@@ -27,8 +29,24 @@ class EnCartel extends Component {
       .catch(err => console.error(err))
   }
 
+handleFilteredChange(e){
+  const userValue = e.target.value;
+
+  this.setState({
+    filterValue: userValue,
+    filteredMovies: this.state.movielist.filter(movie => movie.title.toLowerCase().includes( userValue.toLowerCase() ))
+  })
+}
+
+handleResetFilter(){
+  this.setState({
+    filterValue: '',
+    filteredMovies: this.state.movielist
+  })
+}
+
 handleLoadMore(){
-  const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=56c25df0bc04ec0dd18325a8ea74e10c&page=${this.state.page}`; // prop para decidir entre popular y cartelera para reutilizar el comp
+  const apiUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=56c25df0bc04ec0dd18325a8ea74e10c&page=${this.state.actualPage}`; // prop para decidir entre popular y cartelera para reutilizar el comp
 
     fetch(apiUrl, options)
     .then(response => response.json())
@@ -48,8 +66,10 @@ render(){
     <>
       <div>
         <h2>Peliculas en cartel</h2>
-        <MovieGrid movies={this.state.movielist}/>
-        <button onClick={()=>this.handleLoadMore()}>Cargar mas</button>
+        <input type="text" onChange={(e) => this.handleFilteredChange(e)} value={this.state.filterValue} />
+        <button onClick={() => this.handleResetFilter()}>Reset filter</button>
+        <MovieGrid movies={this.state.filteredMovies}/>
+        <button onClick={() => this.handleLoadMore()}>Cargar mas</button>
       </div>
     </>
   )

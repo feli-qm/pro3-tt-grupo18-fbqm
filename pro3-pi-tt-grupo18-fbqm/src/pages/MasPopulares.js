@@ -5,6 +5,7 @@ import { options } from "../options";
 class MasPopulares extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       movielist: [],
       filteredMovies: [],
@@ -19,7 +20,6 @@ class MasPopulares extends Component {
     fetch(apiUrl, options)
       .then(response => response.json())
       .then(data => {
-        //const numeroPelis = this.props.limit !== undefined ? this.props.limit : data.results.length;
         this.setState({
           movielist: data.results,
           filteredMovies: data.results,
@@ -31,9 +31,17 @@ class MasPopulares extends Component {
 
   handleFilteredChange(e) {
     const userValue = e.target.value;
+
     this.setState({
       filterValue: userValue,
-      filteredMovies: this.state.movielist.filter(movie => movie.title.toLowerCase().includes(userValue.toLowerCase()))
+      filteredMovies: this.state.movielist.filter(movie => movie.title.toLowerCase().includes( userValue.toLowerCase() ))
+    })
+  }
+
+  handleResetFilter(){
+    this.setState({
+      filterValue:'',
+      filteredMovies: this.state.movielist
     })
   }
 
@@ -51,13 +59,6 @@ class MasPopulares extends Component {
         })
       })
       .catch(err => console.error(err))
-  }
-
-  handleResetFilter(){
-    this.setState({
-      filterValue:'',
-      filteredMovies: this.state.movielist
-    })
   }
 
   render() {
