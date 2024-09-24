@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MovieCard from '../components/MovieCard/MovieCard'
+import MovieGrid from '../components/MovieGrid/MovieGrid'
 
 class Favoritos extends Component {
   constructor(props) {
@@ -7,42 +7,35 @@ class Favoritos extends Component {
 
     this.state = {
       movies: [],
-      isLoading: true
     }
   }
 
   componentDidMount() {
-  
-    const storage = localStorage.getItem('favoritos')
-    
+    const storage = localStorage.getItem('favoritos');
     if (storage !== null) {
-      const parsedArray = JSON.parse(storage)
-      this.setState({isLoading : true})
-
+      const parsedArray = JSON.parse(storage);
       Promise.all(
-        parsedArray.map((id)=> {
+        parsedArray.map((id)=>
           fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=56c25df0bc04ec0dd18325a8ea74e10c`)
-          .then((response) => response.json())
-          .then(movie =>
+          .then((response) => response.json()))
+        ).then((movie) =>
             {this.setState({
-              movies: [...this.state.movies, movie],
-              isloading: false,
-            })
-            this.setState({isLoading : false})
-              console.log(movie)}
-            )
+              movies: movie,
+            });
         }) 
-      )
     }
   }
 
   render() {
+    const {movies} = this.state;
     return (
-      <div>
-        {!this.state.isLoading ? (this.state.movies.map((movie) => <MovieCard key={movie.id} movies={movie}/>)) : (<>No agregaste peliculas a favoritos todavía!</>)}
-      </div>
-    )
-  }
+    <>
+    {movies.length > 0 ? (<MovieGrid movies={this.state.movies}/>) : (<p>No agregaste peliculas en favs</p>)}
+    </>
+    );
+}
 }
 
-export default Favoritos
+export default Favoritos;
+
+//header y footer en componentes indep, favbutton incorporado en detalle, <p> en favoritos.js cuando no hay
