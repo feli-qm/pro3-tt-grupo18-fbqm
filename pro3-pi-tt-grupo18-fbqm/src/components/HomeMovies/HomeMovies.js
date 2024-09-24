@@ -2,6 +2,7 @@ import MovieCard from "../MovieCard/MovieCard";
 import { Component } from "react";
 import { options } from "../../options";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
 import "./HomeMovies.css"
 
 class HomeMovies extends Component {
@@ -40,7 +41,7 @@ class HomeMovies extends Component {
                             this.state.movies.map((movie, index) =>
                             <MovieCard movies={movie} key={index} />)
                             :
-                            <p>Cargando...</p>
+                            <Loading />
                         }
                     </div>
                 </section>

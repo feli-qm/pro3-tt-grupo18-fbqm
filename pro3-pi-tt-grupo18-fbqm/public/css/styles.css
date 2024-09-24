@@ -159,13 +159,13 @@ main {
     font-size: 1em;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 250px; /* Ajusta el tamaño del input */
-    box-sizing: border-box; /* Hace que el padding no afecte el ancho total */
+    width: 300px; 
+    box-sizing: border-box; 
 }
 
 .filter-container button {
     padding: 10px 20px;
-    background-color: #007bff; /* Azul */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -180,8 +180,8 @@ main {
 
 .filter-container .input-container{
     display: flex;
-    align-items: center; /* Alinea el input y el botón verticalmente */
-    gap: 20px; /* Espacio entre el input y el botón */
+    align-items: center; 
+    gap: 20px;
 }
 
 .btn-cargar-mas{

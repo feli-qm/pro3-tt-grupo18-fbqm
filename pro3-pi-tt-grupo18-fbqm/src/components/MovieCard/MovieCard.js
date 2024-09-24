@@ -30,10 +30,10 @@ class MovieCard extends Component {
                     <Link to={`/detalle/id/${id}`}><img src={imgUrl} alt=""/></Link><br />
                     <Link to={`/detalle/id/${id}`}><h2>{title}</h2></Link>
 
-                    <button className='btn-ver-mas' onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripcion": "Ver descripcion"}</button><br />
+                    <button className='btn-movie-card' onClick={() => this.handleShowExtra()}>{this.state.showExtra ? "Ocultar descripcion": "Ver descripcion"}</button><br />
                     <p className={this.state.showExtra ? "show":"hide"}>{overview}</p>
 
-                    <Link to={`/detalle/id/${id}`}><button className='btn-detalle'>Ir a detalle</button></Link>
+                    <Link to={`/detalle/id/${id}`}><button className='btn-movie-card'>Ir a detalle</button></Link>
 
                     <FavButton id={id} />
                 </div>

@@ -1,4 +1,3 @@
-/* Contenedor principal centrado */
 .search-form-container {
     display: flex;
     flex-direction: column;
@@ -6,36 +5,32 @@
     justify-content: center;
 }
 
-/* Estilo del formulario */
 .search-form {
     display: flex;
-    align-items: center; /* Alinea el input y el botón verticalmente */
-    gap: 20px; /* Espacio entre el input y el botón */
+    align-items: center; 
+    gap: 20px; 
 }
 
-/* Estilo del título */
 .search-form h2 {
     font-size: 2em;
     color: #333;
     margin-bottom: 20px;
-    text-align: left; /* Alineado a la izquierda */
-    width: 100%; /* Alinea el título con el ancho del formulario */
+    text-align: left; 
+    width: 100%;
 }
 
-/* Estilo del input de búsqueda */
 .search-form input[type="text"] {
     padding: 10px;
     font-size: 1em;
     border-radius: 5px;
     border: 1px solid #ccc;
-    width: 300px; /* Ajusta el tamaño del input */
-    box-sizing: border-box; /* Hace que el padding no afecte el ancho total */
+    width: 300px;
+    box-sizing: border-box; 
 }
 
-/* Estilo del botón */
 .search-form button {
     padding: 10px 20px;
-    background-color: #007bff; /* Azul */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -44,16 +39,14 @@
     transition: background-color 0.3s ease;
 }
 
-/* Efecto hover en el botón */
 .search-form button:hover {
     background-color: #0056b3;
 }
 
-/* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
     .search-form {
         flex-direction: column;
-        gap: 10px; /* Reduce el espacio en pantallas más pequeñas */
+        gap: 10px; 
     }
 
     .search-form input[type="text"], 
