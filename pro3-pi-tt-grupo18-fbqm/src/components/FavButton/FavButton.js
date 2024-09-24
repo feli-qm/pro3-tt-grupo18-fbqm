@@ -1,5 +1,7 @@
 import { Component } from "react";
 import './FavButton.css'
+import { PiHeartStraightFill } from "react-icons/pi";
+import { PiHeartStraightLight } from "react-icons/pi";
 
 class FavButton extends Component {
     constructor(props) {
@@ -53,7 +55,7 @@ class FavButton extends Component {
     render() {
     return (
         <>
-            <button className="favoritos-boton" onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>{!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}</button><br />
+            <button className="favoritos-boton" onClick={() => !this.state.esFavorito ? this.agregarFavorito() : this.sacarFavorito()}>{!this.state.esFavorito ? <PiHeartStraightLight /> : <PiHeartStraightFill /> }</button><br />
         </>
     )
 }
