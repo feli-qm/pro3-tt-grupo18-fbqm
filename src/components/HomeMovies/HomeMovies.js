@@ -33,7 +33,7 @@ class HomeMovies extends Component {
             <>
                 <section className="movieCard-grid">
                     <div>
-                        <button className="ver-mas-boton" onM><Link to={this.props.link}>Ver todas</Link></button>
+                        <button className="ver-mas-boton"><Link to={this.props.link}>Ver todas</Link></button>
                     </div>
                     <div className="movie-card-container">
                         {

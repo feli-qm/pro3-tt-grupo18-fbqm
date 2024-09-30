@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MovieGrid from '../components/MovieGrid/MovieGrid'
+import Loading from '../components/Loading/Loading';
 
 class Favoritos extends Component {
   constructor(props) {
@@ -30,7 +31,14 @@ class Favoritos extends Component {
     const { movies } = this.state;
     return (
       <>
-        {movies.length > 0 ? (<MovieGrid movies={this.state.movies} />) : (<p>No agregaste peliculas en favs</p>)}
+        {movies.length === 0 ?
+          (<p>No agregaste peliculas en favs</p>)
+          :
+          (movies.length > 0) ?
+            (<MovieGrid movies={this.state.movies} />)
+            :
+            (<Loading />)
+        }
       </>
     );
   }
