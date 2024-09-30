@@ -24,20 +24,17 @@ class DetallePelicula extends Component {
             .then(data => {
                 this.setState({ pelicula: data })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err)) // console.log como parte del .catch
     }
 
     render(){
 
         const { pelicula } = this.state;
-
-        console.log('pelicula: ', pelicula);
         
         if (!pelicula){
             return <Loading />
         }
         else {
-            console.log("pelicula.genres: ", pelicula.genres);
             
             return (
                 <>

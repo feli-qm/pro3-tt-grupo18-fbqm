@@ -15,8 +15,8 @@ class SearchResults extends Component {
     }
 
     componentDidMount(){
-        const api_key = "56c25df0bc04ec0dd18325a8ea74e10c";
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${this.props.location.state.valor}&page=1`;
+        const apiKey = "56c25df0bc04ec0dd18325a8ea74e10c";
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${this.props.location.state.valor}&page=1`;
 
         this.setState({cargando: true})
 

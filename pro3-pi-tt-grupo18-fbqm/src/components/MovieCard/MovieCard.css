@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap; 
     justify-content: space-between; 
-    gap: 2px; 
+    gap: 10px; 
     padding: 20px;
   }
   
@@ -90,3 +90,22 @@
   .movieCard-content a:hover {
     color: #0056b3;
   }
+
+  /*Media queries para celulares*/
+  @media (max-width: 420px) {
+    .movie-card {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .movie-card-container {
+        padding: 10px;
+        gap: 5px;
+    }
+}
+
+@media (min-width: 421px) and (max-width: 768px) {
+    .movie-card {
+        width: 48%; /* Dos tarjetas en una fila en tabletas */
+    }
+}

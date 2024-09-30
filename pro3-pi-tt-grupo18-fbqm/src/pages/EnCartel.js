@@ -51,7 +51,6 @@ handleLoadMore(){
     fetch(apiUrl, options)
     .then(response => response.json())
     .then(data => {
-        //const numeroPelis = this.props.limit !== undefined ? this.props.limit : data.results.length;
         this.setState({
             movielist: this.state.movielist.concat(data.results),
             filteredMovies: this.state.movielist.concat(data.results),

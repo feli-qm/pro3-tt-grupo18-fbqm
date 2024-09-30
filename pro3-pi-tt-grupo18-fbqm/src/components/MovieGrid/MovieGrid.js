@@ -3,7 +3,7 @@ import MovieCard from "../MovieCard/MovieCard";
 import './MovieGrid.css'
 
 const MovieGrid = (props) => {
-    console.log(props.movies);
+
     return (
       <>
         { (!props.movies) ? (

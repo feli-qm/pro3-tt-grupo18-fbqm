@@ -133,7 +133,7 @@ main {
     padding: 20px 20px 10px 20px;
 }
 .general-data .card {
-    width: 32%;
+    width: 18%;
     border-radius: 4px;
     background-color: #36b9cc;
     margin-bottom: 10px;
@@ -198,4 +198,77 @@ footer {
     color: white;
     bottom: 0;
     width: 100%;
+}
+/*Media queries para celulares*/
+@media (max-width: 420px) {
+    header {
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 150px;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .main-nav li,
+    .user li {
+        margin: 5px 0;
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .top-data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .data-detail {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .general-data {
+        flex-direction: column;
+    }
+
+    .general-data .card {
+        width: 18%;
+        margin-bottom: 10px;
+    }
+
+    .filter-container input[type="text"] {
+        width: 90%;
+    }
+
+    .filter-container .input-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-cargar-mas {
+        width: 90%;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
 }

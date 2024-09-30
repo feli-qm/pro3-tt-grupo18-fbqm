@@ -19,7 +19,6 @@ class MovieCard extends Component {
     }
 
     render(){
-        console.log(this.props.movies);
         
         const {id, title, poster_path, overview} = this.props.movies;
         const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;

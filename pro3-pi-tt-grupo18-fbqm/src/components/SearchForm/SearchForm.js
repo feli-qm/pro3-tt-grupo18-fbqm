@@ -21,7 +21,6 @@ class SearchForm extends Component {
   }
 
   render() {
-    console.log(this.state.valor);
     
     return (
       <>

@@ -37,5 +37,3 @@ class Favoritos extends Component {
 }
 
 export default Favoritos;
-
-//header y footer en componentes indep, favbutton incorporado en detalle, <p> en favoritos.js cuando no hay
